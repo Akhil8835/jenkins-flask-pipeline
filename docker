@@ -1,0 +1,15 @@
+# Use official Jenkins LTS image
+FROM jenkins/jenkins:lts
+
+# Switch to root user to install additional tools if needed
+USER root
+
+# Example: install docker CLI inside Jenkins container (optional)
+# RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/*
+
+# Switch back to jenkins user
+USER jenkins
+
+# Jenkins runs on port 8080 and agent port 50000
+EXPOSE 8080 50000
+
